@@ -19,6 +19,10 @@ a{
     text-decoration: none;
 }
 
+.blue{
+    color: #5c84f4;
+}
+
 .logo{
     width: 200px;
 }
@@ -54,10 +58,31 @@ a{
     color: #5c84f4;
     font-weight: 500;
     font-size: 20px;
+    position: relative;
 }
 
 .nav__link--anchor-black{
     color: #000;
+}
+
+.nav__link--anchor:after{
+    content: "";
+    position: absolute;
+    bottom: -3px;
+    height: 3px;
+    width: 0;
+    right: 0;
+    background-color: #5c84f4;
+    transition: all 300ms ease;
+}
+
+.nav__link--anchor-black:after{
+    background-color: #000;
+}
+
+.nav__link--anchor:hover:after{
+    left: 0;
+    width: 100%;
 }
 
 .nav__link--anchor-primary{
@@ -67,4 +92,90 @@ a{
     color: #fff;
     font-weight: 500;
     font-size: 20px;
+    transition: all 300ms ease;
+}
+
+.nav__link--anchor-primary:hover{
+    background-color: #a1c7f4;
+}
+
+.landing__page .row{
+    max-width: 1280px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.landing__page{
+    padding: 10px 20px 0 20px;
+    max-height: none;
+}
+
+.information{
+    width: 100%;
+    max-width: 730px;
+    margin: 0 auto;
+}
+
+.section__title{
+    font-size: 50px;
+    color: #5c84f4;
+}
+
+.section__para{
+    font-weight: 700;
+    font-size: 32px;
+    margin: 28px 0;
+    text-transform: uppercase;
+}
+
+.search__wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 24px;
+    width: 100%;
+    max-width: 730px;
+    height: 70px;
+}
+
+.input{
+    border: 1px solid black;
+    border-radius: 20px;
+    width: 100%;
+    height: 100%;
+    padding: 0 16px;
+    font-size: 28px;
+}
+
+.input__wrapper{
+    margin-right: 24px;
+    width: 100%;
+    height: 100%;
+}
+
+.btn{
+    width: 200px;
+    height: 70px;
+    border-radius: 20px;
+    border: none;
+    background-color: #5c84f4;
+    box-shadow: 6px 5px 40px -6px rgba(92, 132, 244, 0.65);
+    cursor: pointer;
+    transition: all 300ms ease;
+}
+
+.btn:hover{
+    background-color: #1d2e4f;
+}
+
+.img{
+    width: 100%;
+    height: 50vh;
+}
+
+.img__wrapper{
+    margin-top: 32px;
 }
