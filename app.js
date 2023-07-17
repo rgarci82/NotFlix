@@ -9,11 +9,15 @@ function validateSearch(){
     window.localStorage.setItem('movietitle', search);
 }
 
-function loadMovie(){
-    if(localStorage.getItem('movietitle') === null){
-        document.querySelector('.test').innerHTML += `<h3>empty</h3>`
+async function loadMovie(){
+    const movieName = localStorage.getItem('movietitle');
+    const movies = await fetch(`https://www.omdbapi.com/?s=${movieName}&apikey=fa83a96e&`);
+    const moviesData = await movies.json();
+    console.log(moviesData);
+    if(movieName === null){
+        //document.querySelector('.test').innerHTML += `<h3>empty</h3>`
     }else{
-        document.querySelector('.test').innerHTML += `<h3>${localStorage.getItem('movietitle')}</h3>`
+        //document.querySelector('.test').innerHTML += `<h3>${movieName}</h3>`
     }
 }
 
