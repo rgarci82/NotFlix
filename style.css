@@ -19,6 +19,11 @@ a{
     text-decoration: none;
 }
 
+img{
+    width: 100%;
+    height: 100%;
+}
+
 .blue{
     color: #5c84f4;
 }
@@ -232,10 +237,16 @@ section{
     padding: 30px 16px;
 }
 
+section .row{
+    max-width: 1200px;
+}
+
 .movies{
     display: flex;
     flex-wrap: wrap;
     margin-top: 32px;
+    justify-content: center;
+    width: 100%;
 }
 
 .search__container{
@@ -247,11 +258,25 @@ section{
 }
 
 .movie{
-    width: 20%;
-    padding: 20px;
+    width:25%;
+    padding: 24px;
+}
+
+.movie__img--wrapper{
+    overflow: hidden;
+    border-radius: 4px;
+    display: flex;
 }
 
 .movie__img{
-    width: 100%;
-    height: 320px;
+    max-height: 380px;
+    transition: all 300ms ease;
+}
+
+.movie:hover .movie__img{
+    transform: scale(1.07);
+}
+
+.movie__title{
+    margin: 6px 0;
 }
