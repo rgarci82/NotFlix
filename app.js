@@ -10,15 +10,23 @@ function validateSearch(){
 }
 
 async function loadMovie(){
-    const movieName = localStorage.getItem('movietitle');
+    let movieName = localStorage.getItem('movietitle');
     const movies = await fetch(`https://www.omdbapi.com/?s=${movieName}&apikey=fa83a96e&`);
     const moviesData = await movies.json();
-    console.log(moviesData);
     if(movieName === null){
-        //document.querySelector('.test').innerHTML += `<h3>empty</h3>`
+        document.querySelector('.movie__searched').innerHTML += `Search For a Title`
     }else{
-        //document.querySelector('.test').innerHTML += `<h3>${movieName}</h3>`
+        movieName = movieName[0].toUpperCase() + movieName.slice(1);
+        document.querySelector('.movie__searched').innerHTML += `Searched for: ${movieName}`
     }
+    const moviesWrapper = document.querySelector('.movies')
+    moviesWrapper.innerHTML = moviesData.Search.map((movie) =>  `<div class="movie">
+            <img class="movie__img" src=${movie.Poster}>
+            <h3 class="movie__title">${movie.Title}</h3>
+            <p class="movie__year">${movie.Year}</p>
+        </div>`
+).join("");
+
 }
 
 loadMovie();
