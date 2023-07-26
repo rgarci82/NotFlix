@@ -1,4 +1,13 @@
-const movieTitle = document.querySelector(".input")
+const movieTitle = document.querySelector(".input");
+
+function openMenu(){
+    if(!document.body.classList.contains("menu--open")){
+        document.body.classList += " menu--open"
+    }
+    else{
+        document.body.classList -= " menu--open"
+    }
+}
 
 function validateSearch(){
     let search = (movieTitle.value);
