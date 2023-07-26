@@ -31,16 +31,17 @@ async function loadMovie(filter){
     else if(filter === 'OLD_TO_NEW'){
         moviesSearh.sort((a,b) => a.Year - b.Year);
     }
-
-    const moviesWrapper = document.querySelector('.movies')
-    moviesWrapper.innerHTML = moviesSearh.map((movie) =>  `<div class="movie">
-        <figure class="movie__img--wrapper">
-            <img class="movie__img" src=${movie.Poster}>
-        </figure>
-            <h3 class="movie__title">${movie.Title}</h3>
-            <p class="movie__year">${movie.Year}</p>
-        </div>`
-).join("");
+    if(movieName !== null){
+        const moviesWrapper = document.querySelector('.movies')
+        moviesWrapper.innerHTML = moviesSearh.map((movie) =>  `<div class="movie">
+            <figure class="movie__img--wrapper">
+                <img class="movie__img" src=${movie.Poster}>
+            </figure>
+                <h3 class="movie__title">${movie.Title}</h3>
+                <p class="movie__year">${movie.Year}</p>
+            </div>`
+        ).join("");
+    }
 
 }
 
