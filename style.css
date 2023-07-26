@@ -198,7 +198,7 @@ img{
 
 .movies__main{
     min-height: 29vh;
-    background-image: url(../assets/HD-wallpaper-horror-movie-collage-collage-dvds-movies-horror-films.jpg);
+    background-image: url("../assets/HD-wallpaper-horror-movie-collage-collage-dvds-movies-horror-films.jpg");
     position: relative;
     isolation: isolate;
 }
